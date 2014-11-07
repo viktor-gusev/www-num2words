@@ -1,0 +1,52 @@
+<style>
+    #title {
+        padding-top: 7px;
+        padding-left: 10px;
+        font-size: 22px;
+        font-weight: bold;
+        width: 300px;
+        color: #ECDFDF;
+    }
+
+    .navbar {
+        border: 1px solid #d4d4d4;
+        border-radius: 4px;
+        width: 100%;
+        background-color: #404550;
+    }
+
+    .navbar .nav li {
+        display: table-cell;
+        color: #777777;
+        width: 70px;
+    }
+
+    .navbar .nav li a {
+        text-align: center;
+        border-right: 1px solid rgba(0, 0, 0, .1);
+        font-weight: bold;
+        color: #F5D5A3;
+    }
+
+    .navbar .nav li a:hover {
+        color: #000000;
+    }
+</style>
+
+
+<div class="navbar">
+    <ul class="nav">
+        <li id="title">
+            <p>Project Name </p>
+        </li>
+        <li>
+            <a ui-sref="a.about">About</a>
+        </li>
+        <li>
+            <a ui-sref="a.howto"><nobr>Documentation</nobr></a>
+        </li>
+        <li>
+            <a ui-sref="a.contacts">Contacts</a>
+        </li>
+    </ul>
+</div>
