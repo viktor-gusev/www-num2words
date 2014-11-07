@@ -38,7 +38,7 @@
                 restrict:    'EA',
                 scope:       {},
                 controller:  ['$scope', directiveNavigatorCtrl],
-                templateUrl: 'app/mod/main/html/_tmpl/navig.html'
+                templateUrl: 'app/mod/main/tmpl/dir/navig.tmpl'
             }
         }
 

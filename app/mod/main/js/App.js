@@ -61,37 +61,37 @@
          */
         function setupSpaStates($stateProvider, $urlRouterProvider) {
             // setup default route
-            $urlRouterProvider.otherwise('/a/about')
+            $urlRouterProvider.otherwise('/state/about')
             // Setup states
             $stateProvider.state({
                 name:        'a',
-                url:         '/a',
-                templateUrl: 'app/mod/main/html/main.html'
+                url:         '/state',
+                templateUrl: 'app/mod/main/tmpl/main.tmpl'
             })
 
             $stateProvider.state({
                 name:        'a.about',
                 url:         '/about',
-                templateUrl: 'app/mod/main/html/a/about.html'
+                templateUrl: 'app/mod/main/tmpl/state/about.tmpl'
             })
 
             $stateProvider.state({
                 name:        'a.howto',
                 url:         '/howto',
-                templateUrl: 'app/mod/main/html/a/documentation.html'
+                templateUrl: 'app/mod/main/tmpl/state/documentation.tmpl'
             })
 
 
             $stateProvider.state({
                 name:        'a.home',
                 url:         '/home',
-                templateUrl: 'app/mod/main/html/a/home.html'
+                templateUrl: 'app/mod/main/tmpl/state/home.tmpl'
             })
 
             $stateProvider.state({
                 name:        'a.contacts',
                 url:         '/contacts',
-                templateUrl: 'app/mod/main/html/a/contacts.html'
+                templateUrl: 'app/mod/main/tmpl/state/contacts.tmpl'
             })
 
              }
