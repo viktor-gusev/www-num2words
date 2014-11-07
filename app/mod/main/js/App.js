@@ -66,32 +66,32 @@
             $stateProvider.state({
                 name:        'a',
                 url:         '/state',
-                templateUrl: 'app/mod/main/tmpl/main.tmpl'
+                templateUrl: 'app/mod/main/tmpl/main.html'
             })
 
             $stateProvider.state({
                 name:        'a.about',
                 url:         '/about',
-                templateUrl: 'app/mod/main/tmpl/state/about.tmpl'
+                templateUrl: 'app/mod/main/tmpl/state/about.html'
             })
 
             $stateProvider.state({
                 name:        'a.howto',
                 url:         '/howto',
-                templateUrl: 'app/mod/main/tmpl/state/documentation.tmpl'
+                templateUrl: 'app/mod/main/tmpl/state/documentation.html'
             })
 
 
             $stateProvider.state({
                 name:        'a.home',
                 url:         '/home',
-                templateUrl: 'app/mod/main/tmpl/state/home.tmpl'
+                templateUrl: 'app/mod/main/tmpl/state/home.html'
             })
 
             $stateProvider.state({
                 name:        'a.contacts',
                 url:         '/contacts',
-                templateUrl: 'app/mod/main/tmpl/state/contacts.tmpl'
+                templateUrl: 'app/mod/main/tmpl/state/contacts.html'
             })
 
              }
