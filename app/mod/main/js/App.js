@@ -4,19 +4,6 @@
  */
 (function (define) {
     'use strict';
-    /* List of AMD modules to be loaded with RequireJS. */
-    var amdDepends = [
-        //@formatter:off
-        '+angular',
-        '+ngUiRouter',
-        '+config',
-        '+ngUiBootstrap',
-        'angulartics',
-        'angularticsGa',
-        'main/js/inc/navig'
-        //@formatter:on
-    ]
-
     define(function (require, exports, module) {
         /**
          * AMD dependencies:
@@ -30,6 +17,7 @@
         /* Application and module configs. */
         var cfgApp = require('config')
         /* This module includes. */
+        var cntrl = require('main/js/inc/cntrl')
         var navig = require('main/js/inc/navig')
 
         /**
@@ -61,29 +49,23 @@
          */
         function setupSpaStates($stateProvider, $urlRouterProvider) {
             // setup default route
-            $urlRouterProvider.otherwise('/state/about')
+            $urlRouterProvider.otherwise('/a/home')
             // Setup states
             $stateProvider.state({
+                /* frame for all other states */
                 name:        'a',
-                url:         '/state',
+                url:         '/a',
                 templateUrl: 'app/mod/main/tmpl/main.html'
             })
 
             $stateProvider.state({
-                name:        'a.about',
-                url:         '/about',
-                templateUrl: 'app/mod/main/tmpl/state/about.html'
-            })
-
-
-
-            $stateProvider.state({
+                /* homepage states */
                 name:        'a.home',
                 url:         '/home',
                 templateUrl: 'app/mod/main/tmpl/state/home.html'
             })
 
-             }
+        }
 
         /**
          * Initialise service providers used by this module.
@@ -92,27 +74,8 @@
             setupSpaStates($stateProvider, $urlRouterProvider);
         }]);
 
-
         ngMod.directive('appNavig', navig.directiveNavigator)
-
-
-        function CarouselDemoCtrl($scope) {
-            $scope.myInterval = 5000;
-            var slides = $scope.slides = [];
-            $scope.addSlide = function () {
-                var newWidth = 600 + slides.length;
-                slides.push({
-                    image: 'http://placekitten.com/' + newWidth + '/300',
-                    text:  ['More', 'Extra', 'Lots of', 'Surplus'][slides.length % 4] + ' ' + ['Cats', 'Kittys',
-                        'Felines', 'Cutes'][slides.length % 4]
-                });
-            };
-            for (var i = 0; i < 4; i++) {
-                $scope.addSlide();
-            }
-        }
-
-        ngMod.controller('CarouselDemoCtrl', CarouselDemoCtrl)
+        ngMod.controller('appCntrl', cntrl.controller)
 
         // remove 'Loading...' indicator
         var msg = angular.element(document.querySelector('#teq_core_spa_loading'));

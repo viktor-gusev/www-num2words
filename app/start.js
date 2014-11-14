@@ -41,7 +41,7 @@ require.config({
 require([
     'main/js/App'
 ], function () {
-    /* init ISC */
+    /* insert non-Angular init code here */
 });
 
 console.log("Get the Tequila shot!");

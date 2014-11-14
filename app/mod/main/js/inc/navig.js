@@ -3,20 +3,9 @@
  *
  * Created by Alex Gusev <flancer64@gmail.com>
  */
-(function (define, require) {
+(function (define) {
     'use strict';
-    /* List of AMD modules to be loaded with RequireJS. */
-    var amdDepends = [
-        //@formatter:off
-        'angular',
-        'ngUiRouter',
-        'config'
-        //@formatter:on
-    ];
-    define(amdDepends, function (angular, uirout, cfg) {
-        /* load required code sources */
-        var ng = angular;
-
+    define(function (require) {
 
         /**
          * @function directiveNavigatorCtrl
@@ -24,7 +13,7 @@
          * @param $scope
          */
         function directiveNavigatorCtrl($scope) {
-
+            /* do nothing */
         }
 
         /**
@@ -52,4 +41,4 @@
         };
 
     });
-}(window.define, window.require));
+}(window.define));
