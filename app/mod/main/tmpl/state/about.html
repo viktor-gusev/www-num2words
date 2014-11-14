@@ -1,56 +1,35 @@
-<script>
-    angular.module('selectExample', [])
-            .controller('ExampleController', ['$scope', function($scope) {
-                $scope.colors = [
-                    {name:'black'},
-                    {name:'white'},
-                    {name:'red'},
-                    {name:'blue'},
-                    {name:'yellow'}
-                ];
-                $scope.myColor = $scope.colors[2]; // red
-            }]);
-</script>
-
 <style>
-    #ptt_start_description {
-        text-align: center;
+    #result {
+        background-color: #cccccc;
+    }
+
+    #form {
+        width: 50%;
     }
 </style>
 
-        <header>
-            <div class="container">
-                <h1>Number to words</h1>
-            </div>
-        </header>
 
-        <hr>
-
-        <div class="row">
-            <div class="span9">
-                <div class="span12">
-                    <label>
-                        Number:
-                    </label>
-                    <input type="text">
-                    </input>
-                </div>
-                <div class="span12"  ng-controller="ExampleController">
-                    <label>
-                        Language:
-                    </label>
-                    <select ng-model="myColor" ng-options="color.name for color in colors"></select>
-                </div>
-                <div class="span12">
-                    <input type="button" value="Submit">
-                </div>
-                <div class="span12">
-                    <label id="result">
-                        Here will be written the result
-                    </label>
-                </div>
-            </div>
+<form class="form-horizontal" role="form" id="form">
+    <div class="form-group">
+        <label for="input_number" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="input_number" placeholder="Enter number">
         </div>
-
-
-
+    </div>
+    <div class="form-group">
+        <label for="selector_lng" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+            <select ng-model="myColor" id="selector_lng" ng-options="color.name for color in colors" class="form-control"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Confirm</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <label id="result">The result will be here</label>
+        </div>
+    </div>
+</form>

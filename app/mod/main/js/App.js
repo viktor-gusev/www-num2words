@@ -75,23 +75,12 @@
                 templateUrl: 'app/mod/main/tmpl/state/about.html'
             })
 
-            $stateProvider.state({
-                name:        'a.howto',
-                url:         '/howto',
-                templateUrl: 'app/mod/main/tmpl/state/documentation.html'
-            })
 
 
             $stateProvider.state({
                 name:        'a.home',
                 url:         '/home',
                 templateUrl: 'app/mod/main/tmpl/state/home.html'
-            })
-
-            $stateProvider.state({
-                name:        'a.contacts',
-                url:         '/contacts',
-                templateUrl: 'app/mod/main/tmpl/state/contacts.html'
             })
 
              }
