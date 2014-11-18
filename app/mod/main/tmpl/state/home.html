@@ -1,8 +1,7 @@
 <style>
-    #result {
+    #output_result {
         background-color: #cccccc;
     }
-
     #form {
         width: 50%;
     }
@@ -34,7 +33,7 @@
 
     <div class="form-group">
         <div class="col-sm-10">
-            <label id="result" ng-model="words">{{words}}</label>
+            <input type="text" class="form-control" id="output_result"  ng-model="words" onclick="this.select()" value="{{words}}">
         </div>
     </div>
 

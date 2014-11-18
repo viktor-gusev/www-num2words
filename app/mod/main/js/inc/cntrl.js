@@ -57,9 +57,15 @@
             scope.sendRequest = function () {
                 var num = ng.isDefined(scope.number) ? scope.number : '1000000'
                 var locale = ng.isDefined(scope.selectedLocale) ? scope.selectedLocale.value : 'en_US'
+
+
                 console.log('Input: num = ' + num + '; locale = ' + locale + ';')
                 $http.get('app/api/num2words.php?num=' + num + '&locale=' + locale).success(function (data, status) {
-                    scope.words = data.words;
+                    var output_result = document.getElementById('output_result')
+//                    scope.words = data.words;
+                    output_result.value=data.words;
+
+                    output_result.select();
                 }).error(function (data, status) {
                     scope.words = data || "Request failed";
                 })
