@@ -16,13 +16,15 @@
          * @param $scope
          */
         function controller($scope, $http) {
+            var cookie = 'favouriteLocale'
             /* pin current context and save NG-scope inside... */
             var ctx = this
             ctx.scope = $scope
             /* ... create shortcut for the NG-scope through the pinned context */
             var scope = ctx.scope
             scope.$$$teqDbgScopeName = 'mainController'
-            scope.locales = [{name: 'bg (Bulgarian) by Kouber Saparev', value: 'bg'},
+            scope.locales = [
+                {name: 'bg (Bulgarian) by Kouber Saparev', value: 'bg'},
                 {name: 'cs (Czech) by Petr \'PePa\' Pavel', value: 'cs'},
                 {name: 'de (German) by Piotr Klaban', value: 'de'},
                 {name: 'dk (Danish) by Jesper Veggerby', value: 'dk'},
@@ -50,21 +52,42 @@
                 {name: 'ru (Russian) by Andrey Demenev', value: 'ru'},
                 {name: 'sv (Swedish) by Robin Ericsson', value: 'sv'},
                 {name: 'tr_TR (Turkish) by Shahriyar Imanov', value: 'tr_TR'},
-                {name: 'ua (Ukrainian) by Andrey Demenev and Vital Leshchyk', value: 'ua'}]
-            scope.selectedLocale = scope.locales[20]
+                {name: 'ua (Ukrainian) by Andrey Demenev and Vital Leshchyk', value: 'ua'}
+            ]
+
+            // search for existed cookie
+            if (localStorage.getItem(cookie) == null) {
+                /* create cookie */
+                localStorage.setItem(cookie, 'lv')
+            }
+            // create local variable
+            var cookieLocale = localStorage.getItem(cookie)
+
+            // '20' is an index for 'lv' in scope.locales
+            var selectedLocale = scope.locales[20]
+            // look up for cookie saved locale
+            angular.forEach(scope.locales, function (value, key) {
+                if (value.value == cookieLocale) {
+                    selectedLocale = value
+                }
+            });
+            // select default value
+            scope.selectedLocale = selectedLocale
             document.getElementById('input_number').focus()
 
             scope.sendRequest = function () {
                 var num = ng.isDefined(scope.number) ? scope.number : '1000000'
                 var locale = ng.isDefined(scope.selectedLocale) ? scope.selectedLocale.value : 'en_US'
 
+                // set new cookies
+                localStorage.setItem(cookie, scope.selectedLocale.value)
 
                 console.log('Input: num = ' + num + '; locale = ' + locale + ';')
                 $http.get('app/api/num2words.php?num=' + num + '&locale=' + locale).success(function (data, status) {
                     var output_result = document.getElementById('output_result')
                     //                    scope.words = data.words;
                     output_result.value = data.words;
-
+                console.log('Output: data = ' + data.words + ';')
                     output_result.select();
                 }).error(function (data, status) {
                     scope.words = data || "Request failed";

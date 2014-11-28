@@ -11,26 +11,20 @@ require.config({
         ngUiBootstrap: '../../lib/ui-bootstrap-tpls',
         angulartics:   '../../lib/angulartics.min',
         angularticsGa: '../../lib/angulartics-ga.min'
+
     },
     /* TODO: what is 'shim' and 'exports'??? */
+    // SHIM - Modules and their dependent modules
+    // http://stackoverflow.com/questions/23936426/why-do-i-need-to-add-a-shim-for-angularjs-when-using-require-js
+    // no need for export
     shim:    {
         'angular':       {'exports': 'angular'},
-        'ngUiRouter':    {
-            deps:      ['angular'],
-            'exports': 'angular'
-        },
-        'ngUiBootstrap': {
-            deps:      ['angular'],
-            'exports': 'angular'
-        },
-        'angulartics':   {
-            deps:      ['angular'],
-            'exports': 'angular'
-        },
-        'angularticsGa': {
-            deps:      ['angular'],
-            'exports': 'angular'
-        }
+        'ngUiRouter':  ['angular'],
+        'ngUiBootstrap':['angular'],
+        'angulartics': ['angular'],
+        'angularticsGa':['angular']
+
+
     }
 });
 
@@ -43,5 +37,6 @@ require([
 ], function () {
     /* insert non-Angular init code here */
 });
-
-console.log("Get the Tequila shot!");
+// TODO if unnecessary delete on 12.12.14
+// Oh, do we really need this log?
+// console.log("Get the Tequila shot!");
