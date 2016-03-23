@@ -85,9 +85,14 @@
                 console.log('Input: num = ' + num + '; locale = ' + locale + ';')
                 $http.get('app/api/num2words.php?num=' + num + '&locale=' + locale).success(function (data, status) {
                     var output_result = document.getElementById('output_result')
+                    if (output_result == null) {
+                        alert(data.words)
+                    } else {
+                        output_result.value = data.words
+                    }
                     //                    scope.words = data.words;
-                    output_result.value = data.words;
-                console.log('Output: data = ' + data.words + ';')
+
+                    console.log('Output: data = ' + data.words + ';')
                     output_result.select();
                 }).error(function (data, status) {
                     scope.words = data || "Request failed";

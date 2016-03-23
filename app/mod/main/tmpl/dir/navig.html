@@ -1,43 +1,9 @@
-<style>
-    #title {
-        padding-top: 7px;
-        padding-left: 10px;
-        font-size: 22px;
-        font-weight: bold;
-        width: 400px;
-        color: #ECDFDF;
-    }
-
-    .navbar {
-        border: 1px solid #d4d4d4;
-        border-radius: 4px;
-        width: 100%;
-        background-color: #404550;
-    }
-
-    .navbar .nav li {
-        display: table-cell;
-        color: #777777;
-        width: 70px;
-    }
-
-    .navbar .nav li a {
-        text-align: center;
-        border-right: 1px solid rgba(0, 0, 0, .1);
-        font-weight: bold;
-        color: #F5D5A3;
-    }
-
-    .navbar .nav li a:hover {
-        color: #000000;
-    }
-</style>
-
-
-<div class="navbar" title="PEAR-based free online service. Convert numbers to words.">
-    <ul class="nav">
-        <li id="title">
-            <p>Convert Number to Words Online</p>
-        </li>
-    </ul>
-</div>
+<nav class="navbar navbar-default" title="PEAR-based free online service. Convert numbers to words.">
+   <div class="container-fluid">
+       <div class="navbar-header"><a class="navbar-brand"href="#" id="title">Convert Number to Words Online</a></div>
+       <ul class="nav">
+           <li role="presentation" class="active"><a ui-sref="a.flags">Flags</a></li>
+           <li role="presentation"><a ui-sref="a.dropdown">Dropdown</a></li>
+       </ul>
+   </div>
+</nav>

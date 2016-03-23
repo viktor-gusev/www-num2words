@@ -49,7 +49,7 @@
          */
         function setupSpaStates($stateProvider, $urlRouterProvider) {
             // setup default route
-            $urlRouterProvider.otherwise('/a/home')
+            $urlRouterProvider.otherwise('/a/flags')
             // Setup states
             $stateProvider.state({
                 /* frame for all other states */
@@ -60,9 +60,16 @@
 
             $stateProvider.state({
                 /* homepage states */
-                name:        'a.home',
-                url:         '/home',
-                templateUrl: 'app/mod/main/tmpl/state/home.html'
+                name:        'a.dropdown',
+                url:         '/dropdown',
+                templateUrl: 'app/mod/main/tmpl/state/dropdown.html'
+            })
+
+            $stateProvider.state({
+                /* homepage states */
+                name:        'a.flags',
+                url:         '/flags',
+                templateUrl: 'app/mod/main/tmpl/state/flags.html'
             })
 
         }

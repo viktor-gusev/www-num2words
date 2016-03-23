@@ -1,51 +1,76 @@
-.fl-button {
-    text-decoration: none;
-    text-align: center;
-    padding: 11px 20px;
-    border: solid 1px #c76a06;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    font: 18px Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #fa9600;
-    background-image: -moz-linear-gradient(top, #fa9600 0%, #ffb700 100%);
-    background-image: -webkit-linear-gradient(top, #fa9600 0%, #ffb700 100%);
-    background-image: -o-linear-gradient(top, #fa9600 0%, #ffb700 100%);
-    background-image: -ms-linear-gradient(top, #fa9600 0%, #ffb700 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb700', endColorstr='#ffb700', GradientType=0);
-    background-image: linear-gradient(top, #fa9600 0%, #ffb700 100%);
-    -webkit-box-shadow: 0px 0px 2px #e0be34, inset 0px 0px 1px #f28c1f;
-    -moz-box-shadow: 0px 0px 2px #e0be34, inset 0px 0px 1px #f28c1f;
-    box-shadow: 0px 0px 2px #e0be34, inset 0px 0px 1px #f28c1f;
-
+#title {
+    color: #dbe4ed;
 }
 
-.fl-button-green {
-    text-decoration: none;
-    text-align: center;
-    padding: 11px 20px;
-    border: solid 1px #06c716;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    font: 18px Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #3cb50d;
-    background-image: -moz-linear-gradient(top, #3cb50d 0%, #00ff09 100%);
-    background-image: -webkit-linear-gradient(top, #3cb50d 0%, #00ff09 100%);
-    background-image: -o-linear-gradient(top, #3cb50d 0%, #00ff09 100%);
-    background-image: -ms-linear-gradient(top, #3cb50d 0%, #00ff09 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ff09', endColorstr='#00ff09', GradientType=0);
-    background-image: linear-gradient(top, #3cb50d 0%, #00ff09 100%);
-    -webkit-box-shadow: 0px 0px 2px #34992b, inset 0px 0px 1px #3fe339;
-    -moz-box-shadow: 0px 0px 2px #34992b, inset 0px 0px 1px #3fe339;
-    box-shadow: 0px 0px 2px #34992b, inset 0px 0px 1px #3fe339;
+.navbar {
+    width: 100%;
+    background-color: #112236;
 }
 
-.fl-button:hover, .fl-button-green:hover {
-    text-decoration: none;
-    color: #ffffff;
+.nav li {
+    display: table-cell;
+    color: #777777;
+    width: 70px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+.nav li a {
+    text-align: center;
+    font-weight: bold;
+    color: #a3bad2;
+}
+
+.nav li a:hover {
+    color: #436280;
+    background-color: #dbe4ed;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.form-control:focus {
+    border-color: #dbe4ed;
+    box-shadow: inset 0 1px 1px #dbe4ed,0 0 8px #dbe4ed;
+}
+
+.btn-primary {
+    background-color: #436280;
+    border-color: #112236;
+}
+.btn-primary:hover {
+    background-color: #a3bad2;
+    border-color: #436280;
+    color: #112236;
+    transition: 0.5s;
+}
+
+.ng-scope {
+    background-color: #dbe4ed;
+}
+
+#flags > div > a > img {
+    height: 80px;
+    width: 140px;
+    margin-left: -30%;
+    padding-right: 10%;
+    padding-bottom: 15%;
+}
+
+#flags > div {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#output_result {
+    background-color: #ffffff;
+}
+
+#form {
+    padding-left: 30%;
+    padding-right: 20%;
+    margin-left: 0;
+}
+#form > div {
+    /*padding-left: 10%;*/
+    /*padding-right: 10%;*/
 }
