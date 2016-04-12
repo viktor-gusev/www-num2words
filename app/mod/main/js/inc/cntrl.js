@@ -84,7 +84,7 @@
 
                 console.log('Input: num = ' + num + '; locale = ' + locale + ';')
                 $http.get('app/api/num2words.php?num=' + num + '&locale=' + locale).success(function (data, status) {
-                    var output_result = document.getElementById('output_result')
+                    var output_result = document.getElementById('input_number')
                     if (output_result == null) {
                         alert(data.words)
                     } else {
